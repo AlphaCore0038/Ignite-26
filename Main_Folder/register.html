@@ -50,29 +50,26 @@
               <div class="form-group"><label for="reg-phone">Phone Number</label><input type="tel" id="reg-phone" placeholder="+91 XXXXX XXXXX" value="" maxlength="14" pattern="^\+91 [0-9]{10}$" title="Must be +91 followed by a 10-digit number" onfocus="if(!this.value) this.value='+91 ';" onblur="if(this.value==='+91 ') this.value='';" oninput="if(this.value && this.value !== '+91 ') this.value = '+91 ' + this.value.replace(/^\+91\s*/, '').replace(/[^0-9]/g, '');" required/></div>
             </div>
             <div class="form-group">
-              <label>Interested Events</label>
-              <div class="custom-dropdown" id="events-dropdown">
-                <input type="hidden" id="reg-events" name="event" required/>
-                <div class="dropdown-trigger">Select events</div>
-                <div class="dropdown-options">
-                  <div class="option-item" data-value="HackNova 2026">HackNova 2026</div>
-                  <div class="option-item" data-value="RoboWars">RoboWars</div>
-                  <div class="option-item" data-value="Capture The Flag">Capture The Flag</div>
-                  <div class="option-item" data-value="Valorant Championship">Valorant Championship</div>
-                  <div class="option-item" data-value="Rocket League Showdown">Rocket League Showdown</div>
-                  <div class="option-item" data-value="The Tech Quiz">The Tech Quiz</div>
-                  <div class="option-item" data-value="Dance Inferno">Dance Inferno</div>
-                  <div class="option-item" data-value="Battle of Bands">Battle of Bands</div>
-                  <div class="option-item" data-value="Pixel Perfect">Pixel Perfect</div>
-                  <div class="option-item" data-value="Code Golf">Code Golf</div>
-                  <div class="option-item" data-value="Street Art Graffiti">Street Art Graffiti</div>
-                  <div class="option-item" data-value="Startup Pitch Arena">Startup Pitch Arena</div>
-                  <div class="option-item" data-value="Infinite Echoes (Fashion Show)">Infinite Echoes (Fashion Show)</div>
-                  <div class="option-item" data-value="Cinematic Magic (Short Film)">Cinematic Magic (Short Film)</div>
-                  <div class="option-item" data-value="Master of Jokes (Stand-up Comedy)">Master of Jokes (Stand-up Comedy)</div>
-                  <div class="option-item" data-value="All Events">All Events</div>
-                </div>
-              </div>
+              <label for="reg-events">Interested Event</label>
+              <select id="reg-events" name="event" required>
+                <option value="">Select an event</option>
+                <option value="HackNova 2026">HackNova 2026</option>
+                <option value="RoboWars">RoboWars</option>
+                <option value="Capture The Flag">Capture The Flag</option>
+                <option value="Valorant Championship">Valorant Championship</option>
+                <option value="Rocket League Showdown">Rocket League Showdown</option>
+                <option value="The Tech Quiz">The Tech Quiz</option>
+                <option value="Dance Inferno">Dance Inferno</option>
+                <option value="Battle of Bands">Battle of Bands</option>
+                <option value="Pixel Perfect">Pixel Perfect</option>
+                <option value="Code Golf">Code Golf</option>
+                <option value="Street Art Graffiti">Street Art Graffiti</option>
+                <option value="Startup Pitch Arena">Startup Pitch Arena</option>
+                <option value="Infinite Echoes (Fashion Show)">Infinite Echoes (Fashion Show)</option>
+                <option value="Cinematic Magic (Short Film)">Cinematic Magic (Short Film)</option>
+                <option value="Master of Jokes (Stand-up Comedy)">Master of Jokes (Stand-up Comedy)</option>
+                <option value="All Events">All Events</option>
+              </select>
             </div>
             <button type="submit" class="btn btn-primary btn-full" id="register-btn">🚀 Register Now — It's Free!</button>
           </form>

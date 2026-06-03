@@ -1,15 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  
-  const cursorGlow = document.getElementById('cursor-glow');
-  let mouseX = 0, mouseY = 0;
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    cursorGlow.style.left = mouseX + 'px';
-    cursorGlow.style.top = mouseY + 'px';
-  });
-
   
   const navbar = document.getElementById('navbar');
   const sections = document.querySelectorAll('section[id]');
@@ -43,15 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
-
-  
-  const parallaxBg = document.getElementById('hero-parallax');
-  window.addEventListener('scroll', () => {
-    if (parallaxBg) {
-      parallaxBg.style.transform = `translateY(${window.scrollY * 0.35}px)`;
-    }
-  }, { passive: true });
-
   
   const particleContainer = document.getElementById('hero-particles');
   if (particleContainer) {
@@ -87,18 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 60);
     }, 900);
   }
-
-  
-  const aosObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('aos-animate');
-        aosObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('[data-aos]').forEach(el => aosObserver.observe(el));
-
   
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -135,59 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   
 
-
-  
-  const dropdown = document.getElementById('events-dropdown');
-  if (dropdown) {
-    const trigger = dropdown.querySelector('.dropdown-trigger');
-    const options = dropdown.querySelectorAll('.option-item');
-    const hiddenInput = document.getElementById('reg-events');
-    let selectedEvents = [];
-
-    trigger.addEventListener('click', () => dropdown.classList.toggle('active'));
-    
-    options.forEach(opt => {
-      opt.addEventListener('click', (e) => {
-        e.stopPropagation(); 
-        const val = opt.getAttribute('data-value');
-        
-        if (opt.classList.contains('selected')) {
-          opt.classList.remove('selected');
-          selectedEvents = selectedEvents.filter(item => item !== val);
-        } else {
-          if (val === "All Events") {
-            selectedEvents = ["All Events"];
-            options.forEach(o => o.classList.remove('selected'));
-            opt.classList.add('selected');
-          } else {
-            const allIndex = selectedEvents.indexOf("All Events");
-            if (allIndex > -1) {
-              selectedEvents.splice(allIndex, 1);
-              options.forEach(o => {
-                if (o.getAttribute('data-value') === "All Events") o.classList.remove('selected');
-              });
-            }
-            opt.classList.add('selected');
-            selectedEvents.push(val);
-          }
-        }
-        
-        if (hiddenInput) hiddenInput.value = selectedEvents.join(', ');
-        
-        if (selectedEvents.length === 0) {
-          trigger.textContent = 'Select events';
-        } else if (selectedEvents.length === 1) {
-          trigger.textContent = selectedEvents[0];
-        } else {
-          trigger.textContent = selectedEvents.length + ' events selected';
-        }
-      });
-    });
-    
-    document.addEventListener('click', e => {
-      if (!dropdown.contains(e.target)) dropdown.classList.remove('active');
-    });
-  }
 
   
   const form = document.getElementById('register-form');

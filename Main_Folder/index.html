@@ -19,8 +19,6 @@
 
 <body>
 
-  <div id="cursor-glow" class="cursor-glow"></div>
-
 
   <nav class="navbar" id="navbar">
     <a href="index.html" class="nav-logo">
@@ -44,14 +42,13 @@
 
 
   <section class="hero" id="home">
-    <div class="hero-parallax-bg" id="hero-parallax"></div>
+    <div class="hero-bg" id="hero-bg"></div>
     <div class="hero-particles" id="hero-particles"></div>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
     <div class="grid-overlay"></div>
     <div class="hero-content reveal-hero">
-      <p class="hero-tag" data-aos="fade-down">🚀 April 25  -  27, 2026 &bull; Campus Central Arena</p>
       <h1 class="hero-title">
         <span class="hero-line" data-aos="fade-up" data-aos-delay="100">College Fest</span>
         <span class="hero-line hero-year" data-aos="zoom-in" data-aos-delay="200">2026</span>
@@ -111,7 +108,6 @@
   <section class="about" id="about">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Who We Are</span>
         <h2 class="section-title">About The Fest</h2>
         <div class="section-line"></div>
       </div>
@@ -151,7 +147,6 @@
   <section class="events" id="events">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">What Awaits</span>
         <h2 class="section-title">Featured Events</h2>
         <div class="section-line"></div>
       </div>
@@ -246,7 +241,6 @@
   <section class="schedule" id="schedule">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Plan Your Visit</span>
         <h2 class="section-title">Event Schedule</h2>
         <div class="section-line"></div>
       </div>
@@ -379,7 +373,6 @@
   <section class="speakers" id="speakers">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Learn From The Best</span>
         <h2 class="section-title">Guest Speakers</h2>
         <div class="section-line"></div>
       </div>
@@ -460,7 +453,6 @@
   <section class="sponsors" id="sponsors">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Our Partners</span>
         <h2 class="section-title">Sponsors</h2>
         <div class="section-line"></div>
       </div>
@@ -513,7 +505,6 @@
     </div>
     <div class="container">
       <div class="register-content" data-aos="fade-up">
-        <span class="section-tag">Don't Miss Out</span>
         <h2 class="register-title">Ready to Ignite?</h2>
         <p class="register-desc">Registrations are filling up fast! Secure your spot at the biggest college fest of
           2026. Early bird passes available until April 20.</p>
@@ -536,14 +527,14 @@
                 <label for="reg-college">Campus</label>
                 <select id="reg-college" required>
                   <option value="">Select your campus</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Coimbatore</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Amritapuri</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Bengaluru</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Chennai</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Amaravati</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Nagercoil</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Faridabad</option>
-                  <option>Amrita Vishwa Vidyapeetham  -  Haridwar</option>
+                  <option>Amrita Vishwa Vidyapeetham - Coimbatore</option>
+                  <option>Amrita Vishwa Vidyapeetham - Amritapuri</option>
+                  <option>Amrita Vishwa Vidyapeetham - Bengaluru</option>
+                  <option>Amrita Vishwa Vidyapeetham - Chennai</option>
+                  <option>Amrita Vishwa Vidyapeetham - Amaravati</option>
+                  <option>Amrita Vishwa Vidyapeetham - Nagercoil</option>
+                  <option>Amrita Vishwa Vidyapeetham - Faridabad</option>
+                  <option>Amrita Vishwa Vidyapeetham - Haridwar</option>
                   <option>Other College</option>
                 </select>
               </div>
@@ -557,30 +548,26 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Interested Events</label>
-              <div class="custom-dropdown" id="events-dropdown">
-                <input type="hidden" id="reg-events" name="event" required />
-                <div class="dropdown-trigger">Select events</div>
-                <div class="dropdown-options">
-                  <div class="option-item" data-value="HackNova 2026">HackNova 2026</div>
-                  <div class="option-item" data-value="RoboWars">RoboWars</div>
-                  <div class="option-item" data-value="Capture The Flag">Capture The Flag</div>
-                  <div class="option-item" data-value="Valorant Championship">Valorant Championship</div>
-                  <div class="option-item" data-value="Rocket League Showdown">Rocket League Showdown</div>
-                  <div class="option-item" data-value="The Tech Quiz">The Tech Quiz</div>
-                  <div class="option-item" data-value="Dance Inferno">Dance Inferno</div>
-                  <div class="option-item" data-value="Battle of Bands">Battle of Bands</div>
-                  <div class="option-item" data-value="Pixel Perfect">Pixel Perfect</div>
-                  <div class="option-item" data-value="Code Golf">Code Golf</div>
-                  <div class="option-item" data-value="Street Art Graffiti">Street Art Graffiti</div>
-                  <div class="option-item" data-value="Startup Pitch Arena">Startup Pitch Arena</div>
-                  <div class="option-item" data-value="Infinite Echoes (Fashion Show)">Infinite Echoes (Fashion Show)
-                  </div>
-                  <div class="option-item" data-value="Cinematic Magic (Short Film)">Cinematic Magic (Short Film)</div>
-                  <div class="option-item" data-value="Master of Jokes (Stand-up Comedy)">Master of Jokes (Stand-up
-                    Comedy)</div>
-                </div>
-              </div>
+              <label for="reg-events">Interested Event</label>
+              <select id="reg-events" name="event" required>
+                <option value="">Select an event</option>
+                <option value="HackNova 2026">HackNova 2026</option>
+                <option value="RoboWars">RoboWars</option>
+                <option value="Capture The Flag">Capture The Flag</option>
+                <option value="Valorant Championship">Valorant Championship</option>
+                <option value="Rocket League Showdown">Rocket League Showdown</option>
+                <option value="The Tech Quiz">The Tech Quiz</option>
+                <option value="Dance Inferno">Dance Inferno</option>
+                <option value="Battle of Bands">Battle of Bands</option>
+                <option value="Pixel Perfect">Pixel Perfect</option>
+                <option value="Code Golf">Code Golf</option>
+                <option value="Street Art Graffiti">Street Art Graffiti</option>
+                <option value="Startup Pitch Arena">Startup Pitch Arena</option>
+                <option value="Infinite Echoes (Fashion Show)">Infinite Echoes (Fashion Show)</option>
+                <option value="Cinematic Magic (Short Film)">Cinematic Magic (Short Film)</option>
+                <option value="Master of Jokes (Stand-up Comedy)">Master of Jokes (Stand-up Comedy)</option>
+                <option value="All Events">All Events</option>
+              </select>
             </div>
             <button type="submit" class="btn btn-primary btn-full ripple-btn" id="register-btn">🔥 Register Now - It's
               Free!</button>
@@ -646,7 +633,8 @@
       <div class="footer-social-modern">
         <h3 class="footer-social-text">Get in touch with us</h3>
         <div class="footer-social-links">
-          <a href="https://www.instagram.com" target="_blank" class="social-link-modern instagram" aria-label="Instagram">
+          <a href="https://www.instagram.com" target="_blank" class="social-link-modern instagram"
+            aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
           <a href="https://www.linkedin.com" target="_blank" class="social-link-modern linkedin" aria-label="LinkedIn">
@@ -659,7 +647,8 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 College Fest – Ignite the Future. All rights reserved.</p>
-        <p>Crafted with passion <img src="logo.png" alt="logo" width="20px" height="20px" style="display:inline-block; vertical-align:middle; margin: 0 4px;"> by Student Council</p>
+        <p>Crafted with passion <img src="logo.png" alt="logo" width="20px" height="20px"
+            style="display:inline-block; vertical-align:middle; margin: 0 4px;"> by Student Council</p>
       </div>
     </div>
   </footer>
