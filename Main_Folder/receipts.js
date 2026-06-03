@@ -1,31 +1,31 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get('type');
+    const url = new URLSearchParams(window.location.search);
+    const t = url.get('type');
 
-    const regNameEl = document.getElementById('r-name');
-    if (regNameEl && type !== 'food') {
-        const registrationData = JSON.parse(localStorage.getItem('ignite_registration'));
-        const receiptContent = document.getElementById('receipt-content');
+    const nameText = document.getElementById('r-name');
+    if (nameText && t !== 'food') {
+        const data = JSON.parse(localStorage.getItem('ignite_registration'));
+        const box = document.getElementById('receipt-content');
 
-        if (registrationData) {
-            regNameEl.textContent = registrationData.name;
-            const emailEl = document.getElementById('r-email');
-            const campusEl = document.getElementById('r-campus');
-            const phoneEl = document.getElementById('r-phone');
-            const eventEl = document.getElementById('r-event');
-            const dateEl = document.getElementById('r-date');
-            const idEl = document.getElementById('r-id');
-            const qrImg = document.getElementById('r-qr');
+        if (data) {
+            nameText.textContent = data.name;
+            const emailText = document.getElementById('r-email');
+            const campusText = document.getElementById('r-campus');
+            const phoneText = document.getElementById('r-phone');
+            const eventText = document.getElementById('r-event');
+            const dateText = document.getElementById('r-date');
+            const idText = document.getElementById('r-id');
+            const qrPic = document.getElementById('r-qr');
 
-            if (emailEl) emailEl.textContent = registrationData.email;
-            if (campusEl) campusEl.textContent = registrationData.campus;
-            if (phoneEl) phoneEl.textContent = registrationData.phone;
-            if (eventEl) eventEl.textContent = registrationData.event || 'All Events';
+            if (emailText) emailText.textContent = data.email;
+            if (campusText) campusText.textContent = data.campus;
+            if (phoneText) phoneText.textContent = data.phone;
+            if (eventText) eventText.textContent = data.event || 'All Events';
             
-            if (dateEl) {
-                dateEl.textContent = new Date().toLocaleDateString('en-IN', {
+            if (dateText) {
+                dateText.textContent = new Date().toLocaleDateString('en-IN', {
                     day: 'numeric',
                     month: 'long',
                     year: 'numeric'
@@ -34,15 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
             const staticId = 'IGN-26-CONFIRMED';
-            if (idEl) idEl.textContent = staticId;
+            if (idText) idText.textContent = staticId;
 
             
-            if (qrImg) {
-                qrImg.src = `image/qr_code.png`;
+            if (qrPic) {
+                qrPic.src = `image/qr_code.png`;
             }
-        } else if (receiptContent) {
+        } else if (box) {
             
-            receiptContent.innerHTML = `
+            box.innerHTML = `
               <div style="text-align:center; padding: 40px;">
                 <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ff4d00; margin-bottom: 20px;"></i>
                 <h3>No registration data found</h3>
@@ -54,16 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     
-    const foodTotalEl = document.getElementById('o-total');
-    if (foodTotalEl && type === 'food') {
-        const orderData = JSON.parse(localStorage.getItem('ignite_food_order'));
-        const receiptContent = document.getElementById('receipt-content');
+    const totalText = document.getElementById('o-total');
+    if (totalText && t === 'food') {
+        const data = JSON.parse(localStorage.getItem('ignite_food_order'));
+        const box = document.getElementById('receipt-content');
 
-        if (orderData && orderData.items && orderData.items.length > 0) {
-            const itemsContainer = document.getElementById('o-items');
-            if (itemsContainer) {
+        if (data && data.items && data.items.length > 0) {
+            const itemsBox = document.getElementById('o-items');
+            if (itemsBox) {
                 let html = '';
-                orderData.items.forEach(item => {
+                data.items.forEach(item => {
                     html += `
                       <div class="item-row">
                         <span class="item-name">${item.emoji} ${item.name}</span>
@@ -71,20 +71,20 @@ document.addEventListener('DOMContentLoaded', () => {
                       </div>
                     `;
                 });
-                itemsContainer.innerHTML = html;
+                itemsBox.innerHTML = html;
             }
-            foodTotalEl.textContent = `₹${orderData.total}`;
+            totalText.textContent = `₹${data.total}`;
 
-            const idEl = document.getElementById('o-id');
-            const qrImg = document.getElementById('o-qr');
+            const idText = document.getElementById('o-id');
+            const qrPic = document.getElementById('o-qr');
             const staticId = 'FOOD-26-CONFIRMED';
             
-            if (idEl) idEl.textContent = staticId;
-            if (qrImg) {
-                qrImg.src = `image/qr_code.png`;
+            if (idText) idText.textContent = staticId;
+            if (qrPic) {
+                qrPic.src = `image/qr_code.png`;
             }
-        } else if (receiptContent) {
-            receiptContent.innerHTML = `
+        } else if (box) {
+            box.innerHTML = `
               <div style="text-align:center; padding: 40px;">
                 <i class="fas fa-utensils" style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 20px;"></i>
                 <h3>Your order is empty</h3>

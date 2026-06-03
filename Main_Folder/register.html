@@ -102,11 +102,11 @@
     </div>
   </footer>
   <script>
-    const form=document.getElementById('register-form');
-    const registerBtn=document.getElementById('register-btn');
-    if(form){form.addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('reg-name').value.trim();const email=document.getElementById('reg-email').value.trim();const campus=document.getElementById('reg-college').value;const phone=document.getElementById('reg-phone').value.trim();const eventVal=document.getElementById('reg-events');const data={name,email,campus,phone,event:eventVal?eventVal.value:'All Events',date:new Date().toISOString()};localStorage.setItem('ignite_registration',JSON.stringify(data));if(registerBtn){registerBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Processing...';registerBtn.style.opacity='0.7';registerBtn.disabled=true;}setTimeout(()=>{window.location.href='receipt.html';},800);});}
+    const regForm = document.getElementById('register-form');
+    const registerBtn = document.getElementById('register-btn');
+    if(regForm){regForm.addEventListener('submit',function(e){e.preventDefault();const n=document.getElementById('reg-name').value.trim();const em=document.getElementById('reg-email').value.trim();const c=document.getElementById('reg-college').value;const p=document.getElementById('reg-phone').value.trim();const ev=document.getElementById('reg-events');const info={name:n,email:em,campus:c,phone:p,event:ev?ev.value:'All Events',date:new Date().toISOString()};localStorage.setItem('ignite_registration',JSON.stringify(info));if(registerBtn){registerBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Processing...';registerBtn.style.opacity='0.7';registerBtn.disabled=true;}setTimeout(()=>{window.location.href='receipt.html';},800);});}
     // Dropdown logic is handled centrally by script.js
-    const closeBtn=document.getElementById('success-close');if(closeBtn){closeBtn.addEventListener('click',()=>{if(form){form.reset();form.style.display='flex';}document.getElementById('success-message').style.display='none';});}
+    const exitBtn = document.getElementById('success-close');if(exitBtn){exitBtn.addEventListener('click',()=>{if(regForm){regForm.reset();regForm.style.display='flex';}document.getElementById('success-message').style.display='none';});}
   </script>
   <script src="script.js"></script>
 </body>

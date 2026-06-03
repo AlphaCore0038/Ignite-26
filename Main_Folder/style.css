@@ -263,7 +263,7 @@
  to { opacity: 1; transform: scale(1) translateY(0) }
  }
  .close-btn { position: absolute; top: 16px; right: 16px; background: rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 50%; color: var(--text-secondary); width: 36px; height: 36px; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth) }
- .close-btn:hover { background: rgba(239, 68, 68, 0.1); color: #ef4444; transform: rotate(90deg) }
+ .close-btn:hover { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
  .modal-title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text }
  .modal-desc { color: var(--text-secondary); font-size: 0.87rem; margin-bottom: 24px }
  .food-list { display: flex; flex-direction: column; gap: 14px }

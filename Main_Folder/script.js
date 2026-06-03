@@ -1,27 +1,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  const navbar = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-link-item');
+  const nav = document.getElementById('navbar');
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-link-item');
   window.addEventListener('scroll', () => {
-    if (navbar) {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    if (nav) {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
     }
     
-    let current = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 100) current = section.id;
+    let curr = '';
+    secs.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) curr = section.id;
     });
-    navItems.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + curr);
     });
   }, { passive: true });
 
   
-  const navToggle = document.getElementById('nav-toggle');
+  const menuBtn = document.getElementById('nav-toggle');
   document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => { if (navToggle) navToggle.checked = false; });
+    link.addEventListener('click', () => { if (menuBtn) menuBtn.checked = false; });
   });
 
   
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  const particleContainer = document.getElementById('hero-particles');
-  if (particleContainer) {
+  const dotsBox = document.getElementById('hero-particles');
+  if (dotsBox) {
     for (let i = 0; i < 30; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
@@ -50,42 +50,42 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity:${Math.random()*0.7+0.3};
         box-shadow:0 0 ${size*3}px hsl(${hue},80%,70%);
       `;
-      particleContainer.appendChild(p);
+      dotsBox.appendChild(p);
     }
   }
 
   
-  const typingEl = document.querySelector('.typing-text');
-  if (typingEl) {
-    const text = typingEl.textContent;
-    typingEl.textContent = '';
+  const textElement = document.querySelector('.typing-text');
+  if (textElement) {
+    const text = textElement.textContent;
+    textElement.textContent = '';
     let i = 0;
     setTimeout(() => {
       const interval = setInterval(() => {
-        typingEl.textContent += text[i];
+        textElement.textContent += text[i];
         i++;
         if (i >= text.length) clearInterval(interval);
       }, 60);
     }, 900);
   }
   
-  const counterObserver = new IntersectionObserver((entries) => {
+  const watcher = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
         const target = parseInt(el.getAttribute('data-target'));
-        let current = 0;
+        let curr = 0;
         const step = target / 60;
         const interval = setInterval(() => {
-          current = Math.min(current + step, target);
-          el.textContent = Math.floor(current).toLocaleString();
-          if (current >= target) clearInterval(interval);
+          curr = Math.min(curr + step, target);
+          el.textContent = Math.floor(curr).toLocaleString();
+          if (curr >= target) clearInterval(interval);
         }, 20);
-        counterObserver.unobserve(el);
+        watcher.unobserve(el);
       }
     });
   }, { threshold: 0.5 });
-  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+  document.querySelectorAll('.counter').forEach(el => watcher.observe(el));
 
   
   
@@ -106,23 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   
-  const form = document.getElementById('register-form');
-  const successMsg = document.getElementById('success-message');
-  const closeBtn = document.getElementById('success-close');
-  if (form) {
-    form.addEventListener('submit', e => {
+  const regForm = document.getElementById('register-form');
+  const doneMessage = document.getElementById('success-message');
+  const exitBtn = document.getElementById('success-close');
+  if (regForm) {
+    regForm.addEventListener('submit', e => {
       e.preventDefault();
       const name = document.getElementById('reg-name')?.value.trim() || '';
       const txt = document.getElementById('success-text');
       if (txt) txt.textContent = `Thank you, ${name}! You are successfully registered.`;
-      form.style.display = 'none';
-      if (successMsg) successMsg.style.display = 'flex';
+      regForm.style.display = 'none';
+      if (doneMessage) doneMessage.style.display = 'flex';
     });
   }
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      if (form) { form.reset(); form.style.display = 'flex'; }
-      if (successMsg) successMsg.style.display = 'none';
+  if (exitBtn) {
+    exitBtn.addEventListener('click', () => {
+      if (regForm) { regForm.reset(); regForm.style.display = 'flex'; }
+      if (doneMessage) doneMessage.style.display = 'none';
     });
   }
 
