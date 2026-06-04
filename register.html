@@ -267,16 +267,30 @@
 
         try {
           console.log("Sending data to Google Sheets");
-          await fetch(SCRIPT_URL, {
-            method: "POST",
-            body: JSON.stringify({
-              fullName: n,
-              email: em,
-              campus: c,
-              phone: p,
-              events: selectedEvents.join(', ')
-            })
-          });
+          try {
+
+            const response = await fetch(SCRIPT_URL, {
+              method: "POST",
+              body: JSON.stringify({
+                fullName: n,
+                email: em,
+                campus: c,
+                phone: p,
+                events: selectedEvents.join(', ')
+              })
+            });
+
+            console.log("STATUS:", response.status);
+
+            const text = await response.text();
+
+            console.log("RESPONSE:", text);
+
+          } catch (err) {
+
+            console.error("FETCH ERROR:", err);
+
+          }
 
           setTimeout(() => {
             window.location.href = 'receipt.html';
