@@ -233,12 +233,14 @@
   <script>
     const SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbzFGeluSwPO5QmnXfiLJV4mCpm6fFDbrJX6vexyzOib2Ynqkav-Qn-D-H13fpxhfyJa/exec";
+    console.log("Register page script loaded");
     const regForm = document.getElementById('register-form');
     const registerBtn = document.getElementById('register-btn');
     if (regForm) {
       regForm.addEventListener('submit', async function (e) {
 
         e.preventDefault();
+        console.log("Form submitted");
 
         const n = document.getElementById('reg-name').value.trim();
         const em = document.getElementById('reg-email').value.trim();
@@ -261,7 +263,7 @@
         }
 
         try {
-
+          console.log("Sending data to Google Sheets");
           await fetch(SCRIPT_URL, {
             method: "POST",
             body: JSON.stringify({
