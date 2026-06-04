@@ -231,10 +231,12 @@
     </div>
   </footer>
   <script>
+    console.log("Inline script started");
     const SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbzFGeluSwPO5QmnXfiLJV4mCpm6fFDbrJX6vexyzOib2Ynqkav-Qn-D-H13fpxhfyJa/exec";
     console.log("Register page script loaded");
     const regForm = document.getElementById('register-form');
+    console.log("regForm =", regForm);
     const registerBtn = document.getElementById('register-btn');
     if (regForm) {
       regForm.addEventListener('submit', async function (e) {
