@@ -683,8 +683,23 @@
       row.style.display = 'flex';
     }
     function removeItem(i) {
-      myCart.splice(i, 1);
-      document.getElementById('cart-count').textContent = myCart.length;
+
+      if (myCart[i].quantity > 1) {
+
+        myCart[i].quantity--;
+
+      } else {
+
+        myCart.splice(i, 1);
+
+      }
+
+      document.getElementById('cart-count').textContent =
+        myCart.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+
       showCart();
     }
     async function orderNow() {
