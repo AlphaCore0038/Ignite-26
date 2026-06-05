@@ -671,8 +671,8 @@
           <div class="food-item">
             <span class="item-vision">${item.emoji}</span>
             <div class="item-details">
-              <p class="item-title">${item.name}</p>
-              <p class="price-tag">₹${item.price}</p>
+              <p class="item-title">${item.name} x${item.quantity}</p>
+              <p class="price-tag">₹${item.price * item.quantity}</p>
             </div>
             <button class="add-btn" onclick="removeItem(${i})" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3);color:#ef4444">✖️</button>
           </div>

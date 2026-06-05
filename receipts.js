@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (campusText) campusText.textContent = data.campus;
             if (phoneText) phoneText.textContent = data.phone;
             if (eventText) eventText.textContent = data.event || 'All Events';
-            
+
             if (dateText) {
                 dateText.textContent = new Date().toLocaleDateString('en-IN', {
                     day: 'numeric',
@@ -32,16 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            
+
             const staticId = 'IGN-26-CONFIRMED';
             if (idText) idText.textContent = staticId;
 
-            
+
             if (qrPic) {
                 qrPic.src = `image/qr_code.png`;
             }
         } else if (box) {
-            
+
             box.innerHTML = `
               <div style="text-align:center; padding: 40px;">
                 <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ff4d00; margin-bottom: 20px;"></i>
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
+
     const totalText = document.getElementById('o-total');
     if (totalText && t === 'food') {
         const data = JSON.parse(localStorage.getItem('ignite_food_order'));
@@ -64,12 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (itemsBox) {
                 let html = '';
                 data.items.forEach(item => {
+
+                    const qty = item.quantity || 1;
+
                     html += `
-                      <div class="item-row">
-                        <span class="item-name">${item.emoji} ${item.name}</span>
-                        <span class="item-price">₹${item.price}</span>
-                      </div>
-                    `;
+      <div class="item-row">
+        <span class="item-name">
+          ${item.emoji} ${item.name} x${qty}
+        </span>
+
+        <span class="item-price">
+          ₹${item.price * qty}
+        </span>
+      </div>
+    `;
                 });
                 itemsBox.innerHTML = html;
             }
@@ -78,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const idText = document.getElementById('o-id');
             const qrPic = document.getElementById('o-qr');
             const staticId = 'FOOD-26-CONFIRMED';
-            
+
             if (idText) idText.textContent = staticId;
             if (qrPic) {
                 qrPic.src = `image/qr_code.png`;
