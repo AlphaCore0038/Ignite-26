@@ -624,7 +624,24 @@
       m.addEventListener('click', e => { if (e.target === m) m.classList.remove('active'); });
     });
     function addItem(name, price, emoji) {
-      myCart.push({ name, price, emoji });
+      const existing = myCart.find(
+        item => item.name === name
+      );
+
+      if (existing) {
+
+        existing.quantity++;
+
+      } else {
+
+        myCart.push({
+          name,
+          price,
+          emoji,
+          quantity: 1
+        });
+
+      }
       document.getElementById('cart-count').textContent = myCart.length;
       const t = document.getElementById('toast');
       t.classList.add('show');
