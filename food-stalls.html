@@ -624,6 +624,7 @@
       m.addEventListener('click', e => { if (e.target === m) m.classList.remove('active'); });
     });
     function addItem(name, price, emoji) {
+
       const existing = myCart.find(
         item => item.name === name
       );
@@ -642,10 +643,17 @@
         });
 
       }
-      document.getElementById('cart-count').textContent = myCart.length;
+
+      document.getElementById('cart-count').textContent =
+        myCart.reduce((sum, item) => sum + item.quantity, 0);
+
       const t = document.getElementById('toast');
+
       t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 2500);
+
+      setTimeout(() => {
+        t.classList.remove('show');
+      }, 2500);
     }
     function showCart() {
       const list = document.getElementById('cart-items-list');
