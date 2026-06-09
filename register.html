@@ -71,7 +71,7 @@
                   placeholder="+91 XXXXX XXXXX" value="" maxlength="14" pattern="^\+91 [0-9]{10}$"
                   title="Must be +91 followed by a 10-digit number" onfocus="if(!this.value) this.value='+91 ';"
                   onblur="if(this.value==='+91 ') this.value='';"
-                  oninput="if(this.value && this.value !== '+91 ') { var raw = this.value.replace(/^\+91\s*/, ''); if(/[^0-9]/.test(raw)) alert('please enter numbers... not character...'); this.value = '+91 ' + raw.replace(/[^0-9]/g, ''); }"
+                  oninput="if(this.value && this.value !== '+91 ') { var raw = this.value.replace(/^\+91\s*/, ''); if(/[^0-9]/.test(raw)) alert('please enter numbers... not character...'); var clean = raw.replace(/[^0-9]/g, ''); if(clean.startsWith('0')) { alert('Phone number cannot start with 0'); clean = clean.replace(/^0+/, ''); } this.value = '+91 ' + clean; }"
                   required /></div>
             </div>
             <style>
