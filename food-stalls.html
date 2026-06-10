@@ -666,7 +666,7 @@
       let html = '';
       let total = 0;
       myCart.forEach((item, i) => {
-        total += item.price;
+        total += item.price*item.quantity;
         html += `
           <div class="food-item">
             <span class="item-vision">${item.emoji}</span>
@@ -712,7 +712,7 @@
       if (!customerName) return;
 
       const total =
-        myCart.reduce((s, i) => s + i.price, 0);
+        myCart.reduce((s, i) => s + (i.price*i.quantity), 0);
 
       localStorage.setItem(
         'ignite_food_order',
