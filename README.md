@@ -213,7 +213,7 @@ The frontend is deployed using **GitHub Pages**, allowing the website to be acce
 
 ### 🧾 Food Order Data
 
-<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/e9dfe467-ad25-43e1-be7d-165e75c63445" />
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/48c4334a-289b-4e0b-815c-241bfe7cf3f2" />
 
 
 ---
