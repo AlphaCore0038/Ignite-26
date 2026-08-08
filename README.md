@@ -188,33 +188,39 @@ The frontend is deployed using **GitHub Pages**, allowing the website to be acce
 
 ### 🏠 Homepage
 
-_Add homepage screenshot here._
+<img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/8ad7bc02-2659-4881-a2b0-20b791eee464" />
+
 
 ### 🎪 Events
 
-_Add events page screenshot here._
+<img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/5d01d32f-95ad-4df7-8e82-280b59cb1144" />
+
 
 ### 📝 Registration
 
-_Add registration page screenshot here._
+<img width="1916" height="910" alt="image" src="https://github.com/user-attachments/assets/d44b70ff-31c6-4453-abcf-333b4ecffd98" />
+
 
 ### 🍔 Food Stalls
 
-_Add food-stall screenshot here._
+<img width="1917" height="902" alt="image" src="https://github.com/user-attachments/assets/23a23e20-7f77-4dd9-a029-843ea8311316" />
+
 
 ### 📊 Registration Data
 
-_Add Google Sheets registration screenshot here._
+<img width="1917" height="908" alt="image" src="https://github.com/user-attachments/assets/3f720b11-2998-4126-9e64-0da30410766c" />
+
 
 ### 🧾 Food Order Data
 
-_Add Google Sheets food-order screenshot here._
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/48c4334a-289b-4e0b-815c-241bfe7cf3f2" />
+
 
 ---
 
 ## 💡 What This Project Demonstrates
 
-IGNITE'26 was built to explore how a frontend application can interact with a backend service and persistent data storage without relying on a traditional hosted server.
+IGNITE'26 was built to explore how a frontend application can interact with a backend service and persistent data storage without relying on a traditional hosted server...
 
 The project demonstrates:
 
