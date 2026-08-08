@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Receipt  -  College Fest 2026 - Ignite the Future</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Receipt - College Fest 2026 - Ignite the Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
+
 <body>
-    <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <a href="index.html" class="nav-logo">
       <img src="logo.png" alt="Ignite Logo" class="logo-icon" width="32" height="32" />
       <span class="logo-text">IGNITE<span class="logo-accent">'26</span></span>
@@ -36,28 +40,50 @@
       <div class="register-content">
         <div class="register-form-wrapper" id="receipt-content">
           <div style="text-align:center;padding:20px 0 32px"><span style="font-size:4rem">✨🎫🎉</span></div>
-          
+
           <div id="reg-receipt">
             <h2 class="register-title" style="font-size:1.8rem;margin-bottom:24px">Registration Confirmed! 🎉</h2>
-            <div class="form-group" style="margin-bottom:12px"><label>Full Name</label><div class="receipt-field" id="r-name">-</div></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Email</label><div class="receipt-field" id="r-email">-</div></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Campus</label><div class="receipt-field" id="r-campus">-</div></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Phone</label><div class="receipt-field" id="r-phone">-</div></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Event</label><div class="receipt-field" id="r-event">-</div></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Registration Date</label><div class="receipt-field" id="r-date">-</div></div>
-            <div class="form-group" style="margin-bottom:24px"><label>Registration ID</label><div class="receipt-field" id="r-id" style="font-weight:700;color:var(--accent-purple)">-</div></div>
-            <div style="text-align:center;margin-bottom:24px"><img id="r-qr" src="" alt="QR Code" class="receipt-qr"/></div>
+            <div class="form-group" style="margin-bottom:12px"><label>Full Name</label>
+              <div class="receipt-field" id="r-name">-</div>
+            </div>
+            <div class="form-group" style="margin-bottom:12px"><label>Email</label>
+              <div class="receipt-field" id="r-email">-</div>
+            </div>
+            <div class="form-group" style="margin-bottom:12px"><label>Campus</label>
+              <div class="receipt-field" id="r-campus">-</div>
+            </div>
+            <div class="form-group" style="margin-bottom:12px"><label>Phone</label>
+              <div class="receipt-field" id="r-phone">-</div>
+            </div>
+            <div class="form-group" style="margin-bottom:12px"><label>Event</label>
+              <div class="receipt-field" id="r-event">-</div>
+            </div>
+            <div class="form-group" style="margin-bottom:12px"><label>Registration Date</label>
+              <div class="receipt-field" id="r-date">-</div>
+            </div>
+            <div class="form-group" style="margin-bottom:24px"><label>Registration ID</label>
+              <div class="receipt-field" id="r-id" style="font-weight:700;color:var(--accent-purple)">-</div>
+            </div>
+            <div style="text-align:center;margin-bottom:24px"><img id="r-qr" src="" alt="QR Code" class="receipt-qr" />
+            </div>
           </div>
-          
+
           <div id="food-receipt" style="display:none">
             <h2 class="register-title" style="font-size:1.8rem;margin-bottom:24px">Order Confirmed! 🍔</h2>
             <div id="o-items"></div>
-            <div style="border-top:1px solid var(--border-subtle);margin:16px 0;padding-top:16px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:1.1rem;font-weight:600;color:var(--text-primary)">Total</span><span id="o-total" style="font-size:1.3rem;font-weight:700;color:var(--accent-purple)">₹0</span></div>
-            <div class="form-group" style="margin-bottom:24px"><label>Order ID</label><div class="receipt-field" id="o-id" style="font-weight:700;color:var(--accent-purple)">-</div></div>
-            <div style="text-align:center;margin-bottom:24px"><img id="o-qr" src="" alt="QR Code" class="receipt-qr"/></div>
+            <div
+              style="border-top:1px solid var(--border-subtle);margin:16px 0;padding-top:16px;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:1.1rem;font-weight:600;color:var(--text-primary)">Total</span><span id="o-total"
+                style="font-size:1.3rem;font-weight:700;color:var(--accent-purple)">₹0</span></div>
+            <div class="form-group" style="margin-bottom:24px"><label>Order ID</label>
+              <div class="receipt-field" id="o-id" style="font-weight:700;color:var(--accent-purple)">-</div>
+            </div>
+            <div style="text-align:center;margin-bottom:24px"><img id="o-qr" src="" alt="QR Code" class="receipt-qr" />
+            </div>
           </div>
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-            <button class="btn-print btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Print Receipt</button>
+            <button class="btn-print btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Print
+              Receipt</button>
             <a href="index.html" class="btn btn-outline">⬅️ Back to Home</a>
           </div>
         </div>
@@ -75,25 +101,45 @@
   <script src="receipts.js"></script>
   <script src="script.js"></script>
   <style>
-    .receipt-field{padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border-subtle);border-radius:12px;color:var(--text-primary);font-size:0.95rem;margin-top:4px}
-    .receipt-qr{
-      width:150px;
-      height:150px;
-      border-radius:16px;
-      border:1px solid rgba(139, 92, 246, 0.3);
+    .receipt-field {
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      margin-top: 4px
+    }
+
+    .receipt-qr {
+      width: 150px;
+      height: 150px;
+      border-radius: 16px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
       padding: 10px;
-      background: rgba(255,255,255,0.02);
+      background: rgba(255, 255, 255, 0.02);
       filter: invert(0.9) hue-rotate(180deg) brightness(1.2);
       box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
       transition: all 0.4s ease;
     }
-    .receipt-qr:hover{
+
+    .receipt-qr:hover {
       transform: scale(1.05);
       box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
       border-color: rgba(139, 92, 246, 0.6);
     }
-    .receipt-page{min-height:100vh;padding:100px 0 80px;background:var(--bg-deep)}
-    .btn-print{display:inline-flex;align-items:center;gap:8px}
+
+    .receipt-page {
+      min-height: 100vh;
+      padding: 100px 0 80px;
+      background: var(--bg-deep)
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
   </style>
   <footer class="footer" id="contact">
     <div class="container">
@@ -138,7 +184,8 @@
       <div class="footer-social-modern">
         <h3 class="footer-social-text">Get in touch with us</h3>
         <div class="footer-social-links">
-          <a href="https://www.instagram.com" target="_blank" class="social-link-modern instagram" aria-label="Instagram">
+          <a href="https://www.instagram.com" target="_blank" class="social-link-modern instagram"
+            aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
           <a href="https://www.linkedin.com" target="_blank" class="social-link-modern linkedin" aria-label="LinkedIn">
@@ -151,9 +198,11 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 College Fest – Ignite the Future. All rights reserved.</p>
-        <p>Crafted with passion <img src="logo.png" alt="logo" width="20px" height="20px" style="display:inline-block; vertical-align:middle; margin: 0 4px;"> by Student Council</p>
+        <p>Crafted with passion <img src="logo.png" alt="logo" width="20px" height="20px"
+            style="display:inline-block; vertical-align:middle; margin: 0 4px;"> by Student Council</p>
       </div>
     </div>
   </footer>
 </body>
+
 </html>
