@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             if (qrPic) {
-                qrPic.src = `image/qr_code.png`;
+                qrPic.src = `image/qrCode.png`;
             }
         } else if (box) {
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (idText) idText.textContent = staticId;
             if (qrPic) {
-                qrPic.src = `image/qr_code.png`;
+                qrPic.src = `image/qrCode.png`;
             }
         } else if (box) {
             box.innerHTML = `
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="fas fa-utensils" style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 20px;"></i>
                 <h3>Your order is empty</h3>
                 <p style="color: var(--text-muted); margin-bottom: 30px;">Head back to the food stalls to grab some grub!</p>
-                <a href="food-stalls.html" class="btn-print" style="text-decoration:none; display:inline-flex; background: var(--accent-cyan);">Visit Food Stalls</a>
+                <a href="foodStalls.html" class="btn-print" style="text-decoration:none; display:inline-flex; background: var(--accent-cyan);">Visit Food Stalls</a>
               </div>
             `;
         }
