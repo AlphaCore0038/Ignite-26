@@ -172,7 +172,7 @@ Registrations • Food Orders
 
 ## 🌐 Deployment
 
-The frontend is deployed using **GitHub Pages**, allowing the website to be accessed publicly through a web browser without requiring users to install or run the project locally.
+The frontend is deployed using **GitHub Pages**, allowing the website to be accessed publicly through a web browser without requiring users to install or run the project locally...
 
 ### Live Website
 
