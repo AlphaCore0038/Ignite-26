@@ -220,7 +220,7 @@ The frontend is deployed using **GitHub Pages**, allowing the website to be acce
 
 ## 💡 What This Project Demonstrates
 
-IGNITE'26 was built to explore how a frontend application can interact with a backend service and persistent data storage without relying on a traditional hosted server.
+IGNITE'26 was built to explore how a frontend application can interact with a backend service and persistent data storage without relying on a traditional hosted server...
 
 The project demonstrates:
 
